@@ -1,7 +1,7 @@
 from xml.etree.ElementInclude import include
 from django.contrib import admin
 from django.db import router
-from django.urls import path, include
+from django.urls import path, include, re_path
 # from parking_api.views import ParkingLotViewset
 from rest_framework.routers import DefaultRouter
 from rest_framework import permissions
@@ -33,7 +33,7 @@ router.register('bookings', booking_views.BookingViewset)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
-
+    path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 ]

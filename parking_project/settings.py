@@ -169,4 +169,3 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # GDAL_LIBRARY_PATH = os.environ.get('GDAL_LIBRARY_PATH')
 # GEOS_LIBRARY_PATH = os.environ.get('GEOS_LIBRARY_PATH')
 
-SWAGGER_SETTINGS = { "DEFAULT_GENERATOR_CLASS": "rest_framework.schemas.generators.BaseSchemaGenerator", }
